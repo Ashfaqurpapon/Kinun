@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Container, CssBaseline, Grid, Stack, Typography } from "@mui/material";
+import Navbar from "./componants/navbar";
+import ItemCard from "./Myself/itemCard";
+import Swr from "./api/apiData";
+
+
+import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
+
+
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+    <BrowserRouter>   i
+      <CssBaseline />
+      <Navbar/>
+      <Swr/>
+      
+    </BrowserRouter>
+  );
+};
 export default App;
