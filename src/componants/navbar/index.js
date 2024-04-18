@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Button, Container, Stack } from '@mui/material';
-import addForm from '../add-form'; // Corrected import statement
+import AddForm from '../add-form'; // Corrected import statement
 
 const Navbar = ({ products }) => {
   const [open, setOpen] = useState(false);
@@ -38,9 +38,11 @@ const Navbar = ({ products }) => {
             </Stack>
           </Toolbar>
           <Toolbar>
-            <Button variant='contained' onClick={handleClickOpen}>
-              Add Playlist
+            <Button variant='contained' onClick={handleClickOpen} >
+              Add items
             </Button>
+            <AddForm  handleClose={handleClose}/>
+           
          
           </Toolbar>
         </Container>

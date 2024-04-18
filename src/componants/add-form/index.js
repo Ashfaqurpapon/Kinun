@@ -1,10 +1,11 @@
 import React, { useState} from 'react';
+import Swr from '../../api/apiData';
 
-const addForm = () => {
+const AddForm = (handleClose) => {
     const [formData, setFormData] = useState({
-        key1: '',
-        key2: '',
-        key3: ''
+        name: '',
+        imageURL: '',
+        price: ''
     });
 
     const handleChange = (e) => {
@@ -18,7 +19,7 @@ const addForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        fetch('https://example.com/api/data', {
+        fetch('http://192.168.1.29:4444/admin/addProduct', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -56,6 +57,8 @@ const addForm = () => {
                     value={formData.key2} 
                     onChange={handleChange} 
                 />
+                <br />
+                <label htmlFor="key3">Key 3:</label>
                 <input 
                     type="text" 
                     id="key3" 
@@ -65,9 +68,11 @@ const addForm = () => {
                 />
                 <br />
                 <button type="submit">Submit</button>
+               
             </form>
+            <Swr />
         </div>
     );
 };
 
-export default addForm;
+export default AddForm;

@@ -13,7 +13,7 @@ import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
 function App() {
 
   const products=Swr();
-  //console.log(products);
+  console.log(products);
  
   return (
 
@@ -22,7 +22,7 @@ function App() {
       <CssBaseline />
       <Navbar products={products}/>
       <ItemCard products={products}/>
-      <ReturnApi />
+     
 
     </BrowserRouter>
   );
