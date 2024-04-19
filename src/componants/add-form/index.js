@@ -1,7 +1,7 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import Swr from '../../api/apiData';
 
-const AddForm = (handleClose) => {
+const AddForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         imageURL: '',
@@ -17,6 +17,7 @@ const AddForm = (handleClose) => {
     };
 
     const handleSubmit = (e) => {
+        console.log(formData);
         e.preventDefault();
         
         fetch('http://192.168.1.29:4444/admin/addProduct', {
@@ -35,44 +36,44 @@ const AddForm = (handleClose) => {
             console.error('Error:', error);
             // Optionally, you can handle errors here
         });
+       
     };
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="key1">Key 1:</label>
+                <label htmlFor="name">Key 1:</label>
                 <input 
                     type="text" 
                     id="key1" 
-                    name="key1" 
-                    value={formData.key1} 
+                    name="name" 
+                    value={formData.name} 
                     onChange={handleChange} 
                 />
                 <br />
-                <label htmlFor="key2">Key 2:</label>
+                <label htmlFor="imageURL">Key 2:</label>
                 <input 
                     type="text" 
                     id="key2" 
-                    name="key2" 
-                    value={formData.key2} 
+                    name="imageURL" 
+                    value={formData.imageURL} 
                     onChange={handleChange} 
                 />
                 <br />
-                <label htmlFor="key3">Key 3:</label>
+                <label htmlFor="price">Key 3:</label>
                 <input 
                     type="text" 
                     id="key3" 
-                    name="key3" 
-                    value={formData.key3} 
+                    name="price" 
+                    value={formData.price} 
                     onChange={handleChange} 
                 />
                 <br />
                 <button type="submit">Submit</button>
-               
             </form>
-            <Swr />
         </div>
     );
+    
 };
 
 export default AddForm;

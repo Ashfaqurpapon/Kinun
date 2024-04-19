@@ -7,6 +7,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Button, Container, Stack } from '@mui/material';
 import AddForm from '../add-form'; // Corrected import statement
+import Swr from '../../api/apiData';
+import ItemCard from '../../Myself/itemCard';
 
 const Navbar = ({ products }) => {
   const [open, setOpen] = useState(false);
@@ -42,6 +44,10 @@ const Navbar = ({ products }) => {
               Add items
             </Button>
             <AddForm  handleClose={handleClose}/>
+            <Swr />
+           
+            
+
            
          
           </Toolbar>
