@@ -20,7 +20,7 @@ const AddForm = () => {
         console.log(formData);
         e.preventDefault();
         
-        fetch('http://192.168.1.29:4444/admin/addProduct', {
+        fetch('https://darajapp.onrender.com/admin/addProduct', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -41,6 +41,7 @@ const AddForm = () => {
 
     return (
         <div>
+            
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Key 1:</label>
                 <input 
@@ -70,8 +71,11 @@ const AddForm = () => {
                 />
                 <br />
                 <button type="submit">Submit</button>
+                
             </form>
+            
         </div>
+       
     );
     
 };

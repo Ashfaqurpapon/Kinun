@@ -44,7 +44,7 @@ const Navbar = ({ products }) => {
               Add items
             </Button>
             <AddForm  handleClose={handleClose}/>
-            <Swr />
+           
            
             
 

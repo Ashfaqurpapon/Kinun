@@ -6,7 +6,7 @@ const Swr = () => {
 
     useEffect(() => {
         // Fetch data when component mounts
-        fetch('http://192.168.1.29:4444/admin/Products')
+        fetch('https://darajapp.onrender.com/admin/products')
             .then(response => {
                 // Check if the response is successful (status code 200)
                 if (!response.ok) {
