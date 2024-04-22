@@ -10,20 +10,18 @@ import Swr from '../../api/apiData';
 const ItemCard = ({ products }) => {
     const handleRemove = (productId) => {
         console.log(productId);
-        fetch('https://darajapp.onrender.com/admin/deleteProduct/:id', {
+       
+        fetch(`https://darajapp.onrender.com/admin/deleteProduct/${productId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ productId }),
+            
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            // Optionally, you can handle the response here
-        })
+      
+        
         .catch(error => {
-            console.error('Error:', error);
+           
             // Optionally, you can handle errors here
         });
     };
